@@ -72,9 +72,9 @@ export default function Hero() {
           {names.map((name, nameIndex) => (
             <motion.span
               key={name}
-              className="gold-gradient-text block text-[2.35rem] font-semibold leading-tight sm:text-5xl md:text-6xl lg:text-7xl"
-              initial={{ opacity: 0, y: 28, filter: 'blur(8px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              className="block text-[2.35rem] font-semibold leading-tight text-[color:var(--gold)] sm:text-5xl md:text-6xl lg:text-7xl"
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45 + nameIndex * 0.22, duration: 0.75 }}
             >
               {name}

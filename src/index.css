@@ -153,8 +153,8 @@ textarea:focus-visible {
 }
 
 .gold-gradient-text {
-  color: transparent;
-  background: linear-gradient(
+  color: var(--gold);
+  background-image: linear-gradient(
     165deg,
     #dbc08a 0%,
     #c9a961 38%,
@@ -163,6 +163,15 @@ textarea:focus-visible {
   );
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .gold-gradient-text {
+    background-image: none;
+    -webkit-text-fill-color: currentColor;
+    color: var(--gold);
+  }
 }
 
 .ripple-button {
