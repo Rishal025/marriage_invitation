@@ -24,8 +24,8 @@ export const invitation = {
   },
   venue: {
     name: 'St.Joseph Cottolengo Hall',
-    address: 'Near KNB road',
-    fullAddress: 'St.Joseph Cottolengo Hall, Near KNB road',
+    address: 'Near KMP road',
+    fullAddress: 'St.Joseph Cottolengo Hall, Near KMP road',
     googleMapsLink: 'https://maps.app.goo.gl/dkuQSkvERw6n3FiG6?g_st=aw',
   },
   contact: {
@@ -51,14 +51,14 @@ export const invitation = {
       'May Allah bless you both, shower His blessings upon you, and unite you both in goodness.',
   },
   theme: {
-    primaryBg: '#3B0F19',
-    secondaryBg: '#4A1422',
-    darkBg: '#2A0812',
-    gold: '#D4AF37',
-    goldLight: '#F2D98C',
-    goldDark: '#B8860B',
+    primaryBg: '#22060C',
+    secondaryBg: '#2D0810',
+    darkBg: '#180408',
+    gold: '#C9A961',
+    goldLight: '#DBC08A',
+    goldDark: '#9A7B3F',
     textPrimary: '#FFFFFF',
-    textSecondary: '#E8DDD2',
+    textSecondary: '#D4C4B0',
   },
   gallery: [] as { title: string; image: string }[],
   timeline: [

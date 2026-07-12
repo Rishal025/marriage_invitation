@@ -7,7 +7,7 @@ import { invitation } from '../../config/invitation'
 import { useMouseParallax } from '../../hooks/useMouseParallax'
 import { staggerContainer } from '../../utils/motion'
 
-const nameLetters = `${invitation.bride.name} & ${invitation.groom.name}`.split('')
+const names = [invitation.bride.name, invitation.groom.name]
 
 export default function Hero() {
   const parallax = useMouseParallax(18)
@@ -17,12 +17,12 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="section-shell emerald-pattern geo-pattern flex min-h-screen items-center"
+      className="section-shell emerald-pattern geo-pattern flex min-h-screen items-center px-4 py-16 sm:px-6 md:py-24"
       aria-label="Wedding invitation hero"
     >
       <Particles />
       <motion.div
-        className="absolute left-[8%] top-[14%] hidden text-[color:var(--gold)]/40 md:block"
+        className="absolute left-[8%] top-[14%] hidden text-[color:var(--gold)]/30 md:block"
         style={shouldReduceMotion ? undefined : { x: parallax.x, y: parallax.y }}
         animate={{ y: [0, -18, 0], rotate: [-2, 2, -2] }}
         transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
@@ -31,7 +31,7 @@ export default function Hero() {
         <Lantern />
       </motion.div>
       <motion.div
-        className="absolute bottom-[16%] right-[9%] hidden text-[color:var(--light-gold)]/30 lg:block"
+        className="absolute bottom-[16%] right-[9%] hidden text-[color:var(--gold)]/20 lg:block"
         style={shouldReduceMotion ? undefined : { x: -parallax.x, y: -parallax.y }}
         animate={{ y: [0, 22, 0], rotate: [4, -2, 4] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
@@ -41,13 +41,13 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        className="section-inner relative z-10 mx-auto text-center"
+        className="section-inner relative z-10 mx-auto w-full max-w-lg text-center sm:max-w-xl md:max-w-2xl"
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
       >
         <motion.p
-          className="font-arabic mb-5 text-5xl text-[color:var(--light-gold)] md:text-7xl"
+          className="font-arabic mb-4 text-2xl leading-relaxed text-[color:var(--gold)] sm:mb-5 sm:text-3xl md:text-4xl"
           variants={{
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0, transition: { duration: 0.9 } },
@@ -56,7 +56,7 @@ export default function Hero() {
           بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
         </motion.p>
         <motion.p
-          className="mx-auto max-w-xl text-xs font-semibold uppercase tracking-[0.42em] text-white/65"
+          className="mx-auto max-w-xs text-[0.62rem] font-semibold uppercase tracking-[0.28em] text-[color:var(--gold)]/75 sm:max-w-md sm:text-xs sm:tracking-[0.36em]"
           variants={{
             hidden: { opacity: 0, y: 16 },
             visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
@@ -66,58 +66,62 @@ export default function Hero() {
         </motion.p>
         <AnimatedDivider light />
         <motion.h1
-          className="font-heading mx-auto max-w-5xl text-6xl font-semibold leading-none text-white md:text-8xl lg:text-9xl"
+          className="font-heading mx-auto flex flex-col items-center gap-1 sm:gap-2"
           aria-label={`${invitation.bride.name} and ${invitation.groom.name}`}
         >
-          {nameLetters.map((letter, index) => (
+          {names.map((name, nameIndex) => (
             <motion.span
-              key={`${letter}-${index}`}
-              className={letter === ' ' ? 'inline-block w-4' : 'inline-block'}
-              initial={{ opacity: 0, y: 40, rotateX: -70, filter: 'blur(10px)' }}
-              animate={{ opacity: 1, y: 0, rotateX: 0, filter: 'blur(0px)' }}
-              transition={{ delay: 0.45 + index * 0.035, duration: 0.75 }}
+              key={name}
+              className="gold-gradient-text block text-[2.35rem] font-semibold leading-tight sm:text-5xl md:text-6xl lg:text-7xl"
+              initial={{ opacity: 0, y: 28, filter: 'blur(8px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ delay: 0.45 + nameIndex * 0.22, duration: 0.75 }}
             >
-              {letter}
+              {name}
             </motion.span>
           ))}
         </motion.h1>
         <motion.div
-          className="mx-auto mt-8 flex w-fit items-center gap-3 rounded-full border border-[color:var(--gold)]/35 bg-white/8 px-5 py-3 text-sm text-white/80 backdrop-blur"
+          className="mx-auto mt-6 flex w-full max-w-sm flex-col items-center gap-2 rounded-2xl border border-[color:var(--gold)]/25 bg-black/15 px-4 py-3 text-xs text-[color:var(--gold)]/85 backdrop-blur sm:mt-8 sm:max-w-none sm:flex-row sm:justify-center sm:gap-3 sm:rounded-full sm:px-5 sm:text-sm"
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.4, duration: 0.75 }}
+          transition={{ delay: 1.2, duration: 0.75 }}
         >
-          <CalendarHeart size={18} className="text-[color:var(--gold)]" />
-          <span>{weddingDate}</span>
-          <span aria-hidden="true">•</span>
+          <span className="inline-flex items-center gap-2">
+            <CalendarHeart size={16} className="text-[color:var(--gold)]" />
+            {weddingDate}
+          </span>
+          <span className="hidden sm:inline" aria-hidden="true">
+            •
+          </span>
           <span>{invitation.event.time}</span>
         </motion.div>
         <motion.p
-          className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-white/70 md:text-xl"
+          className="mx-auto mt-6 max-w-md text-sm leading-7 text-[color:var(--gold)]/70 sm:mt-8 sm:max-w-lg sm:text-base sm:leading-8"
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.62, duration: 0.75 }}
+          transition={{ delay: 1.4, duration: 0.75 }}
         >
           {invitation.families.invitationText}
         </motion.p>
         <motion.a
           href="#quran"
-          className="ripple-button mt-10 inline-flex items-center justify-center rounded-full border border-[color:var(--gold)] bg-[color:var(--dark-bg)] px-8 py-4 text-sm font-semibold uppercase tracking-[0.24em] text-[color:var(--gold)] shadow-[var(--shadow-gold)] transition hover:-translate-y-1 hover:scale-105 hover:shadow-[0_10px_35px_rgba(212,175,55,0.35)]"
+          className="ripple-button mt-8 inline-flex items-center justify-center rounded-full border border-[color:var(--gold)] bg-[color:var(--dark-bg)] px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold)] shadow-[var(--shadow-gold)] transition hover:-translate-y-1 hover:scale-105 hover:shadow-[0_10px_35px_rgba(154,123,63,0.35)] sm:mt-10 sm:px-8 sm:py-4 sm:text-sm sm:tracking-[0.24em]"
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.82, duration: 0.75 }}
+          transition={{ delay: 1.6, duration: 0.75 }}
         >
           View Invitation
         </motion.a>
         <motion.a
           href="#quran"
-          className="absolute bottom-[-5rem] left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs uppercase tracking-[0.28em] text-white/45 md:flex"
+          className="mt-10 hidden flex-col items-center gap-2 text-[0.65rem] uppercase tracking-[0.24em] text-[color:var(--gold)]/45 md:flex"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           aria-label="Scroll to invitation"
         >
           Scroll
-          <ChevronDown size={18} />
+          <ChevronDown size={16} />
         </motion.a>
       </motion.div>
     </section>

@@ -10,8 +10,8 @@ export default function Footer() {
       <p className="font-heading text-3xl">
         {invitation.bride.name} & {invitation.groom.name}
       </p>
-      <p className="mt-4 inline-flex items-center justify-center gap-2 text-sm text-white/62">
-        Made with <Heart size={15} className="fill-[color:var(--gold)] text-[color:var(--gold)]" /> for a blessed beginning
+      <p className="mt-4 inline-flex items-center justify-center gap-1.5 text-[0.65rem] text-[color:var(--gold)]/55 sm:text-xs">
+        Made with <Heart size={12} className="fill-[color:var(--gold)] text-[color:var(--gold)]" /> for a blessed beginning
       </p>
     </footer>
   )
