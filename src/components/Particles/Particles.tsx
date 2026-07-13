@@ -14,7 +14,7 @@ export default function Particles() {
       {particles.map((particle) => (
         <motion.span
           key={particle.id}
-          className="absolute bottom-[-10%] rounded-full bg-[color:var(--gold)]/55 blur-[0.5px]"
+          className="absolute bottom-[-10%] rounded-full bg-[#b8956b]/35 blur-[0.5px]"
           style={{
             left: particle.left,
             width: particle.size,

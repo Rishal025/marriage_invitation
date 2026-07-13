@@ -7,14 +7,14 @@
   --dark-bg: #180408;
   --surface: rgba(45, 8, 16, 0.72);
 
-  --gold: #c9a961;
-  --gold-light: #dbc08a;
-  --gold-dark: #9a7b3f;
+  --gold: #b8956b;
+  --gold-light: #c4a574;
+  --gold-dark: #8b7049;
 
   --text-primary: #ffffff;
-  --text-secondary: #d4c4b0;
+  --text-secondary: #c8b8a4;
 
-  --border: rgba(201, 169, 97, 0.22);
+  --border: rgba(184, 149, 107, 0.22);
   --shadow: rgba(0, 0, 0, 0.55);
 
   /* Legacy aliases — components reference these */
@@ -26,8 +26,8 @@
   --ink: var(--text-primary);
   --muted: var(--text-secondary);
 
-  --shadow-soft: 0 10px 35px rgba(154, 123, 63, 0.16);
-  --shadow-gold: 0 10px 35px rgba(154, 123, 63, 0.2);
+  --shadow-soft: 0 10px 35px rgba(139, 112, 73, 0.16);
+  --shadow-gold: 0 10px 35px rgba(139, 112, 73, 0.2);
 
   color: var(--text-secondary);
   background: var(--dark-bg);
@@ -108,17 +108,17 @@ textarea:focus-visible {
 .cream-pattern {
   color: var(--text-primary);
   background:
-    radial-gradient(ellipse at 50% 30%, rgba(201, 169, 97, 0.05), transparent 55%),
-    radial-gradient(circle at 18% 18%, rgba(154, 123, 63, 0.06), transparent 28rem),
+    radial-gradient(ellipse at 50% 30%, rgba(184, 149, 107, 0.04), transparent 55%),
+    radial-gradient(circle at 18% 18%, rgba(139, 112, 73, 0.05), transparent 28rem),
     linear-gradient(180deg, #180408 0%, #22060c 50%, #2d0810 100%);
 }
 
 .emerald-pattern {
   color: var(--text-primary);
   background:
-    radial-gradient(ellipse at 50% 35%, rgba(201, 169, 97, 0.07), transparent 50%),
-    radial-gradient(circle at 15% 10%, rgba(154, 123, 63, 0.08), transparent 28rem),
-    radial-gradient(circle at 90% 80%, rgba(120, 90, 50, 0.05), transparent 28rem),
+    radial-gradient(ellipse at 50% 35%, rgba(184, 149, 107, 0.05), transparent 50%),
+    radial-gradient(circle at 15% 10%, rgba(139, 112, 73, 0.06), transparent 28rem),
+    radial-gradient(circle at 90% 80%, rgba(107, 82, 52, 0.04), transparent 28rem),
     linear-gradient(180deg, #120306 0%, #180408 40%, #22060c 100%);
 }
 
@@ -129,7 +129,7 @@ textarea:focus-visible {
   pointer-events: none;
   content: '';
   opacity: 0.09;
-  background-image: url("data:image/svg+xml,%3Csvg width='84' height='84' viewBox='0 0 84 84' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C9A961' stroke-width='1'%3E%3Cpath d='M42 2l12 28 28 12-28 12-12 28-12-28L2 42l28-12z'/%3E%3Ccircle cx='42' cy='42' r='18'/%3E%3Cpath d='M0 42h84M42 0v84' opacity='.45'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='84' height='84' viewBox='0 0 84 84' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23B8956B' stroke-width='1'%3E%3Cpath d='M42 2l12 28 28 12-28 12-12 28-12-28L2 42l28-12z'/%3E%3Ccircle cx='42' cy='42' r='18'/%3E%3Cpath d='M0 42h84M42 0v84' opacity='.45'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 96px 96px;
   animation: pattern-drift 32s linear infinite;
 }
@@ -152,14 +152,87 @@ textarea:focus-visible {
   color: var(--gold);
 }
 
+.text-gold {
+  color: #b8956b;
+  -webkit-text-fill-color: #b8956b;
+}
+
+.text-gold-muted {
+  color: #a08050;
+  -webkit-text-fill-color: #a08050;
+}
+
+.text-gold-soft {
+  color: #9a8568;
+  -webkit-text-fill-color: #9a8568;
+}
+
+#hero .hero-name {
+  color: #b8956b;
+  -webkit-text-fill-color: #b8956b;
+  text-shadow:
+    0 1px 0 rgba(107, 82, 52, 0.55),
+    0 0 18px rgba(139, 112, 73, 0.15);
+}
+
+#hero .hero-ampersand {
+  color: #c4a574;
+  -webkit-text-fill-color: #c4a574;
+}
+
+#hero .hero-ampersand-mark {
+  color: #c4a574;
+  -webkit-text-fill-color: #c4a574;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 10px rgba(196, 165, 116, 0.1);
+}
+
+#hero .hero-bismillah {
+  color: #c4a574;
+  -webkit-text-fill-color: #c4a574;
+}
+
+#hero .hero-subtitle,
+#hero .hero-body,
+#hero .hero-date,
+#hero .hero-button {
+  color: #b8956b;
+  -webkit-text-fill-color: #b8956b;
+}
+
+#hero .hero-subtitle {
+  color: #a08050;
+  -webkit-text-fill-color: #a08050;
+}
+
+#hero .hero-body {
+  color: #9a8568;
+  -webkit-text-fill-color: #9a8568;
+}
+
+#hero .hero-date-box {
+  border-color: rgba(184, 149, 107, 0.25);
+  color: #b8956b;
+  -webkit-text-fill-color: #b8956b;
+}
+
+#hero .hero-button {
+  border-color: #b8956b;
+  color: #b8956b;
+  -webkit-text-fill-color: #b8956b;
+}
+
 .gold-gradient-text {
-  color: var(--gold);
+  color: #b8956b;
+  -webkit-text-fill-color: #b8956b;
   background-image: linear-gradient(
     165deg,
-    #dbc08a 0%,
-    #c9a961 38%,
-    #b8956b 72%,
-    #9a7b3f 100%
+    #c4a574 0%,
+    #b8956b 45%,
+    #a08050 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -186,7 +259,7 @@ textarea:focus-visible {
   height: 0;
   content: '';
   border-radius: 999px;
-  background: rgba(201, 169, 97, 0.14);
+  background: rgba(184, 149, 107, 0.14);
   transform: translate(-50%, 50%);
   transition: width 0.45s ease, height 0.45s ease;
 }

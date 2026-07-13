@@ -30,7 +30,7 @@ export default function CustomCursor() {
   return (
     <div className="custom-cursor pointer-events-none fixed inset-0 z-[100] hidden mix-blend-difference md:block">
       <motion.span
-        className="fixed left-0 top-0 size-2 rounded-full bg-[color:var(--gold)] shadow-[0_0_18px_rgba(201,169,97,0.85)]"
+        className="fixed left-0 top-0 size-2 rounded-full bg-[#b8956b] shadow-[0_0_18px_rgba(184,149,107,0.75)]"
         style={{ x: cursorX, y: cursorY, translateX: '-50%', translateY: '-50%' }}
       />
       <motion.span
