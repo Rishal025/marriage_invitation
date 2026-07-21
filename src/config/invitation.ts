@@ -62,15 +62,15 @@ export const invitation = {
   },
   gallery: [] as { title: string; image: string }[],
   timeline: [
-    { time: '11:30 AM', title: 'Guest Arrival', description: 'A warm welcome with refreshments.' },
-    { time: '12:00 PM', title: 'Nikkah Ceremony', description: 'The sacred vows and witnesses.' },
-    { time: '12:30 PM', title: 'Dua', description: 'Collective prayers for barakah.' },
+    { time: '12:00 PM', title: 'Guest Arrival', description: 'A warm welcome with refreshments.' },
+    { time: '12:30 PM', title: 'Nikkah Ceremony', description: 'The sacred vows and witnesses.' },
+    { time: '01:00 PM', title: 'Dua', description: 'Collective prayers for barakah.' },
     {
-      time: '12:30 PM',
+      time: '01:00 PM',
       title: 'Photo Session',
-      description: 'Begins immediately after Dua, while lunch is served.',
+      description: 'Portraits with family and friends.',
     },
-    { time: '01:00 PM', title: 'Lunch', description: 'Family meal served alongside the photo session.' },
+    { time: '01:30 PM', title: 'Lunch', description: 'A family meal served with love.' },
   ],
   seo: {
     title: 'Hasna & Nafih | Nikkah Invitation',
