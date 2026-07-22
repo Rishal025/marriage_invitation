@@ -19,8 +19,8 @@ export const invitation = {
   event: {
     title: 'Nikkah Ceremony',
     date: '2026-08-22',
-    time: '12:00 PM',
-    countdownDate: '2026-08-22T12:00:00+05:30',
+    time: '12:30 PM',
+    countdownDate: '2026-08-22T12:30:00+05:30',
   },
   venue: {
     name: 'St.Joseph Cottolengo Hall',
